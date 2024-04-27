@@ -1,7 +1,7 @@
 name: deploy rds
 
 on:
-on:
+
   workflow_run:
     workflows:
       - "deploy vpc"
