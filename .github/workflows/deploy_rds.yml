@@ -1,7 +1,6 @@
 name: deploy rds
 
 on:
-
   workflow_run:
     workflows:
       - "deploy vpc"
@@ -39,5 +38,5 @@ jobs:
         working-directory: rds
         run: |
           echo "applying"
-          # terraform apply -auto-approve
+          #terraform apply -auto-approve
                
