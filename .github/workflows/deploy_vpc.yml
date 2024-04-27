@@ -2,9 +2,9 @@ name: deploy vpc
 
 on:
   push:
-    paths:
-      -"vpc/**"
- 
+    branches:
+      - "main"
+      - "master"
 jobs:
   build:
     runs-on: ubuntu-latest #windows-latest #mac-latest

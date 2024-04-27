@@ -2,8 +2,8 @@ name: deploy rds
 
 on:
   push:
-    paths:
-      -"rds/**"
+    workflows:
+      - "deploy vpc"
  
 jobs:
   build:
