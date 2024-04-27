@@ -1,4 +1,4 @@
-name: deploy asg
+name: build ami
 
 on:
   workflow_run:
