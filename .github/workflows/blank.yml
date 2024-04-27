@@ -1,16 +1,13 @@
 name: Deploy VPC
 
-
 on:
   push:
     branches: [ "main" ]
  
-
 jobs:
   build:
     runs-on: ubuntu-latest #windows-latest #mac-latest
     steps:
-
 
       - uses: actions/checkout@v4
 
@@ -18,8 +15,10 @@ jobs:
         run: |
           terraform init
 
-
     - name: Configure workspace
         run: |
           terraform workspace new dev || terraform workspace select dev
-          
+
+          - name: plan
+        run: |
+          terraform plan
