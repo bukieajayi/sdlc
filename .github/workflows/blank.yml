@@ -16,12 +16,12 @@ jobs:
         run: |
           terraform init
 
-    - name: Configure workspace
-      working-directory: vpc
+      - name: Configure workspace
+        working-directory: vpc
         run: |
           terraform workspace new dev || terraform workspace select dev
 
-          - name: plan
-            working-directory: vpc
+      - name: plan
+        working-directory: vpc
         run: |
           terraform plan
