@@ -3,7 +3,7 @@ name: deploy vpc
 on:
   push:
     paths:
-      -"vpc/"
+      -"vpc/**"
  
 jobs:
   build:
