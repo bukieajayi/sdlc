@@ -2,8 +2,8 @@ name: deploy asg
 
 on:
   push:
-   paths:
-      - "vpc/"
+    paths:
+      - "asg/"
  
 jobs:
   build:
