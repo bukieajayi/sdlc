@@ -1,0 +1,34 @@
+name: Deploy asg
+
+on:
+  push:
+    branches: [ "main" ]
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest #windows-latest #mac-latest
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Initialize terraform
+        working-directory:asg
+        run: |
+          terraform init
+
+      - name: Configure workspace
+        working-directory: asg
+        run: |
+          terraform workspace new dev || terraform workspace select dev
+
+      - name: plan
+        working-directory: asg
+        run: |
+          terraform plan
+
+      - name: apply
+        working-directory: asg
+        run: |
+          echo "applying"
+          # terraform apply -auto-approve
+               
