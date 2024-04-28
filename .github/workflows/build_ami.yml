@@ -3,7 +3,7 @@ name: build ami
 on:
   workflow_run:
     workflows:
-      - "deploy vpc"
+      - "deploy rds"
     type:
       - completed
 jobs:
@@ -18,24 +18,8 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      - name: Initialize terraform
-        working-directory: asg
+      - name: Initialize packer
+        working-directory: packer
         run: |
-          terraform init
+          packer version
 
-      - name: Configure workspace
-        working-directory: asg
-        run: |
-          terraform workspace new dev || terraform workspace select dev
-
-      - name: plan
-        working-directory: asg
-        run: |
-          terraform plan
-
-      - name: apply
-        working-directory: asg
-        run: |
-          echo "applying"
-          # terraform apply -auto-approve
-               

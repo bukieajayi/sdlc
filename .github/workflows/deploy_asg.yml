@@ -3,9 +3,10 @@ name: deploy asg
 on:
   workflow_run:
     workflows:
-      - "deploy vpc"
+      - "build ami"
     types:
       - completed
+
 jobs:
   build:
     runs-on: ubuntu-latest #windows-latest #mac-latest
