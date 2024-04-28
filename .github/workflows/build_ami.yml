@@ -2,8 +2,7 @@ name: build ami
 
 on:
   workflow_run:
-    workflows:
-      - "deploy rds"
+    workflows: ["deploy rds"]
     type:
       - completed
 jobs:
